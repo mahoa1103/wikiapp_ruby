@@ -1,0 +1,11 @@
+<h1>CATEGORY</h1>
+
+<ul>
+  <% @test.each do |test| %>
+    <li>
+    <%= link_to test.title, test %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Category", new_test_path %>
