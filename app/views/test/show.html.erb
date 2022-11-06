@@ -1,0 +1,17 @@
+<h1>Title: <%= @test.title %></h1>
+
+<p>Description: <%= @test.description %></p>
+
+<p>Type: <%= @test.typeof %></p>
+
+<p>Created_at: <%= @test.created_at %></p>
+
+<p>Updated_at: <%= @test.updated_at %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_test_path(@test) %></li>
+  <li><%= link_to "Destroy", test_path(@test), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
