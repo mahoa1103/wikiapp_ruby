@@ -3,12 +3,30 @@
 <h1>Posts</h1>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+        <th scope="col">Category Type</th>
+        <th scope="col">Show</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.content %></td>
+          <td><%= post.category.title %></td>
+          <td><%= link_to "Show", post, class: "btn btn-primary" %> </td>
+          <td><%= link_to "Edit", edit_post_path(post), class: "btn btn-primary"  %> </td>
+          <td><%= link_to "Destroy", post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"  %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to "New post", new_post_path %>

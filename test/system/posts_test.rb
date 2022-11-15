@@ -14,9 +14,8 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "New post"
 
-    fill_in "Author", with: @post.author
-    fill_in "Description", with: @post.description
-    fill_in "Kind", with: @post.kind
+    fill_in "Content", with: @post.content
+    fill_in "Name", with: @post.name
     fill_in "Title", with: @post.title
     click_on "Create Post"
 
@@ -28,9 +27,8 @@ class PostsTest < ApplicationSystemTestCase
     visit post_url(@post)
     click_on "Edit this post", match: :first
 
-    fill_in "Author", with: @post.author
-    fill_in "Description", with: @post.description
-    fill_in "Kind", with: @post.kind
+    fill_in "Content", with: @post.content
+    fill_in "Name", with: @post.name
     fill_in "Title", with: @post.title
     click_on "Update Post"
 

@@ -12,23 +12,23 @@
   <% end %>
 
   <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :category_id, Category.all.map { |c| [c.title, c.id]} %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.label :kind, style: "display: block" %>
-    <%= form.text_field :kind %>
-  </div>
-
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
   </div>
 
   <div>
